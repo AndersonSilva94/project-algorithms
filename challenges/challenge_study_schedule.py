@@ -25,10 +25,9 @@ def study_schedule(permanence_period, target_time):
         return None
     students = 0
     for start_period, end_period in permanence_period:
-
-        if not start_period or not end_period \
-                or type(start_period) == str or type(end_period) == str:
+        "istanceof é um método que verifica se a variável possui o tipo"
+        if not isinstance(start_period, int) or not isinstance(end_period, int):
             return None
-        elif start_period <= target_time <= end_period:
+        if start_period <= target_time <= end_period:
             students += 1
     return students
